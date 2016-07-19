@@ -19,7 +19,7 @@
     "phpunit/phpunit": "~5.2"
   },
   "autoload": {
-    "psr-4": {"ClassLoader\\": "src"}
+    "psr-4": {"Wwtg99\\ClassLoader\\": "src"}
   },
   "repositories": [
     {

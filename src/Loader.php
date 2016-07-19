@@ -22,7 +22,7 @@ class Loader
     /**
      * @var array
      */
-    private $register_path;
+    private $register_path = [];
 
     /**
      * @var string
@@ -34,7 +34,7 @@ class Loader
      * @param string $root parent path
      * @param array $register_path [[prefix, path, <recursive>], ...]
      */
-    public function __construct($root, array $register_path)
+    public function __construct($root, array $register_path = [])
     {
         $this->root = $root;
         $this->register_path = $register_path;
@@ -46,6 +46,18 @@ class Loader
     public function autoload()
     {
         return $this->loadClass($this->register_path);
+    }
+
+    /**
+     * @param $path
+     * @param $prefix
+     * @param bool $recursive
+     * @return $this
+     */
+    public function addClassPath($path, $prefix, $recursive = false)
+    {
+        array_push($this->register_path, [$prefix, $path, $recursive]);
+        return $this;
     }
 
     /**
