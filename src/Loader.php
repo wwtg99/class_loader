@@ -6,7 +6,7 @@
  * Time: 11:59
  */
 
-namespace ClassLoader;
+namespace Wwtg99\ClassLoader;
 
 
 use Symfony\Component\ClassLoader\Psr4ClassLoader;

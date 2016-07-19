@@ -16,7 +16,7 @@ class TestLoader extends PHPUnit_Framework_TestCase
         $register_path =[
             ['TestClass', 'TestClass', true],
         ];
-        $loader = new \ClassLoader\Loader(__DIR__, $register_path);
+        $loader = new \Wwtg99\ClassLoader\Loader(__DIR__, $register_path);
         $loader->autoload();
         $test1 = new \TestClass\Test1();
         $this->assertEquals('test1', $test1->getName());
